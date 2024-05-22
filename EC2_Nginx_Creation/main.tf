@@ -15,6 +15,7 @@ resource "aws_instance" "ec2_instance1" {
     tags = {
     Name = "Instance1"
   }
+  user_data = base64encode(file("userdata.sh"))
 }
 
 resource "aws_instance" "ec2_instance2" {
@@ -24,6 +25,7 @@ resource "aws_instance" "ec2_instance2" {
     tags = {
     Name = "Instance2"
   }
+  user_data = base64encode(file("userdata1.sh"))
 }
 
 
